@@ -1,0 +1,54 @@
+#Left rotation indicates transferring first item to last . 
+
+for i in range(3): # no of rotations=3 
+  temp = arr[0] 
+  for j in range(n): # n is length of array! 
+    arr[j]=arr[j+1]  # item is 2nd index moves to 1st index (i.e,,) item assignment of given index is assigned with next index value /
+  arr[n-1]=temp      # after for loop, the last item is assigned with temp(arr[0])!
+print(arr) 
+
+
+#Right rotation indicates trasnferring last item to first . 
+
+for i in range(1):
+  temp = arr[n-1] 
+  for j in range(n-1,0,-1): #Traversing from highest index
+    arr[j]=arr[j-1]  #item in 1st index is assigned with item in 0th index and 2nd index is assinged with 1st index value and so on... 
+  arr[0]=temp        # first item is taken from temp variable . 
+print(arr)
+
+#############################################
+
+#Reversal algo (right) ;
+def reverse(arr,start,end):
+  while (start<end):
+    arr[start],arr[end]=arr[end],arr[start]
+    start+=1 
+    end-=1 
+    
+def right(arr,d,n):
+  reverse(arr,0,n-1)
+  reverse(arr,0,d-1)
+  reverse(arr,d,n-1)
+  
+
+#Reversal algo(left) ; 
+
+def reverse(arr,start,end):
+  while (start<end):
+    arr[start],arr[end]=arr[end],arr[start]
+    start+=1 
+    end-=1 
+    
+def left(arr,d,n):
+  if d==0:
+    return ; 
+  n=len(arr) 
+  d=d%n 
+  reverse(arr,0,d-1) 
+  reverse(arr,d,n-1)
+  reverse(arr,0,n-1) 
+  
+  
+######################################################3
+
